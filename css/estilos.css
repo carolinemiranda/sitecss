@@ -1,12 +1,41 @@
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  }
+
 body {
   background-image: url("https://image.freepik.com/free-vector/golden-bokeh-lights-background_1048-9227.jpg"); 
   font-family: Arial; 
   background-size:auto 100vh;
   height:100vh;
 }
+/*Se a tela tiver 400pixels vai carregar esses estilos**/
+@media(min-width:400px){
+  body{
+    font-size:14px;
+  }
+}
+/*Breakpoint**/
+@media(min-width:600px){
+  body{
+    font-size:18px;
+  }
+}
+
+header {
+  height:50vh; 
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
 
 .menu{
   background-color:white; 
+  position:fixed;
+  width:100vw;
+  /*para colocar o navegador, menu no topo*/
+  top:0;
 }
 
 .menu li{
@@ -27,8 +56,19 @@ a:hover{
   text-decoration:underline;   
 }
 
+.menu a {
+  /*para poder usar o padding e quebrar o texto. Aumentou o tamanho o menu*/
+  display:block;
+  padding:10px 20px;
+}
+
 .site-subtitle,
 .site-title {
   text-align:center;
   color:#4d3319;
+}
+
+.img-portfolio{
+  width:180px;
+  height:180px;
 }
