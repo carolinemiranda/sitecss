@@ -68,7 +68,60 @@ a:hover{
   color:#4d3319;
 }
 
+.site-title{
+	font-size:4em;
+	font-family: 'Special Elite', cursive;
+}
+
+
+.site-subtitle{
+	font-family: 'Roboto', sans-serif;
+	line-height:1.8em;	
+}
+
+.portfolio{
+	padding:2em;
+}
+
+.portfolio h2{
+	font-family: 'Fira Sans', sans-serif;
+	padding:1em;
+}
+
+.portfolio .grid{
+	display: grid;
+	gap:2em;
+	height:calc();
+}
+
+@media(min-width:560px){
+	.portfolio .grid{
+		grid-template-columns: 240px 240px;
+		justify-content:center;
+	}
+}
+
+@media(min-width:880px){
+	.portfolio .grid{
+		grid-template-columns: 260px 260px;
+		justify-content:center;
+		height:calc(100vh - 4em - 48px - 1.5em);
+	}
+}
+
+.portfolio figure{
+	text-align:center;	
+}	
+
 .img-portfolio{
-  width:180px;
-  height:180px;
+  width:240px;
+  height:220px;
+  border-radius:10%;
+}
+
+@media(min-width:1200){
+	.img-portfolio{
+	  width:auto;
+	  height:100%;
+	 }
 }
