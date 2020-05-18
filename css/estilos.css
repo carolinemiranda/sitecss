@@ -47,10 +47,7 @@ header {
   justify-content:space-around;
 }
 
-a{
-  text-decoration:none; 
-  color:#4d2600;
-}
+
 
 a:hover{
   text-decoration:underline;   
@@ -60,6 +57,35 @@ a:hover{
   /*para poder usar o padding e quebrar o texto. Aumentou o tamanho o menu*/
   display:block;
   padding:10px 20px;
+  /*quais propriedades do elemento mudar*/
+  transition:background-color 2s,color,1s;
+}
+
+/*o active é para fazer o efeito de sombra quando usar o touch do celular*/
+.menu a:active,
+.menu a:hover{
+	background-color:#4d3319;
+	color:white;
+}
+
+a{
+  text-decoration:none; 
+  color:#4d2600;
+}
+
+.titulo{
+	transform:scale(0.2) translateY(50vh);
+	opacity: 0;
+	animation: linear 2s animacaoTitulo forwards;
+}
+
+
+@keyframes animacaoTitulo{
+	
+	to{
+		transform:scale(1) translateY(0);
+		opacity: 1;
+	}
 }
 
 .site-subtitle,
@@ -79,21 +105,18 @@ a:hover{
 	line-height:1.8em;	
 }
 
-.portfolio{
-	padding:2em;
+.portfolio .grid{
+	display: grid;
+	gap:2em;
+	height:calc();
 }
 
+.contato,
 .portfolio h2{
 	font-family: 'Fira Sans', sans-serif;
 	font-size: 2em;
 	padding:1em;
 	color:#4d2600;
-}
-
-.portfolio .grid{
-	display: grid;
-	gap:2em;
-	height:calc();
 }
 
 @media(min-width:560px){
@@ -119,6 +142,13 @@ a:hover{
   width:240px;
   height:220px;
   border-radius:10%;
+   /*Para fazer a transição mais suave*/  
+  transition:transform 500ms;
+}
+
+.img-portfolio:hover{
+   /*Faz a imagem aumentar quando passa o mouse em cima*/
+  transform:scale(1.2);
 }
 
 @media(min-width:1200){
@@ -126,4 +156,14 @@ a:hover{
 	  width:auto;
 	  height:100%;
 	 }
+}
+
+.contato a{
+	transition: text-shadow 0.5s;
+}
+
+.contato a:active,
+.contato a:hover{
+	text-decoration:none;
+	text-shadow: 0px 0px 10px #4d2600;
 }
